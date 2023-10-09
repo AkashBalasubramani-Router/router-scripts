@@ -1,13 +1,10 @@
 import axios from "axios";
 import * as dotenv from "dotenv";
 dotenv.config();
-// Define the contractAddress and chainId you want to search for
 
-// Define the URL
 const url =
   "https://lcd.testnet.routerchain.dev/router-protocol/router-chain/multichain/contract_config";
 
-// Function to fetch and filter the data
 async function fetchAndFilterData(
   targetContractAddress: string,
   targetChainId: string
@@ -44,7 +41,6 @@ async function fetchAndFilterData(
   }
 }
 
-// Call the function to fetch and filter data
 const targetContractAddress1 = process.env.CONTRACTADDRESS as string;
 const targetChainId1 = process.env.CHAINID as string;
 fetchAndFilterData(targetContractAddress1, targetChainId1);
