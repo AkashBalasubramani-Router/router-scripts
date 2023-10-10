@@ -16,8 +16,7 @@ async function fetchAndFilterData(
   targetChainId: string
 ): Promise<boolean> {
   try {
-    const url =
-      "https://lcd.testnet.routerchain.dev/router-protocol/router-chain/multichain/contract_config";
+    const url = process.env.LCD_URL as string;
 
     const response = await axios.get(url);
     const data = response.data;
@@ -32,7 +31,10 @@ async function fetchAndFilterData(
 
       if (matchingContracts.length > 0) {
         const firstMatchingContract = matchingContracts[0];
-        if (firstMatchingContract.contract_enabled) {
+        if (
+          firstMatchingContract.contract_enabled &&
+          firstMatchingContract.contractType === process.env.CONTRACT_TYPE
+        ) {
           console.log("Contract is enabled");
         } else {
           console.log("Contract is not enabled");
@@ -51,15 +53,15 @@ async function fetchAndFilterData(
 
     let wasmClient: ChainGrpcWasmApi;
     const endpoint = getEndpointsForNetwork(Network.Testnet);
+    endpoint.lcdEndpoint;
     const chainId = getChainInfoForNetwork(Network.Testnet).chainId;
-    const addresscontract =
-      "router17hlelrccxutnpe6u0gw2tk52f6ekrwenmz9amyhhfsq2v24mhkzquuwu99";
+    const middleware = process.env.MIDDLEWARE_ADDRESS as string;
     const function1 = toUtf8(JSON.stringify({ fetch_all_white_listed: {} }));
 
     async function queryWhiteListedContracts(): Promise<boolean> {
       wasmClient = new ChainGrpcWasmApi(endpoint.grpcEndpoint);
       const querying = await wasmClient.fetchSmartContractState(
-        addresscontract,
+        middleware,
         function1
       );
 
@@ -86,10 +88,10 @@ async function fetchAndFilterData(
         return false;
       }
 
-      const rpcUrl = "https://rpc-mumbai.maticvigil.com";
+      const rpcUrl = process.env.RPC_URL;
       const provider = new ethers.JsonRpcProvider(rpcUrl);
 
-      async function queryStateVariable(
+      async function queryStateVariable( //@make seperate fns
         contractAddress: string,
         variableName: string,
         targetAddress: string
@@ -123,6 +125,7 @@ async function fetchAndFilterData(
       const targetAddress = "0x7B2AE36e2381ba23e497c803c4b7da401dcabb5a";
 
       return await queryStateVariable(
+        //@make it generic
         contractAddress,
         "assetForwarder",
         targetAddress

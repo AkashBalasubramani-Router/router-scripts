@@ -35,6 +35,8 @@ async function queryWhiteListedContracts() {
   const targetContractAddress = process.env.COSM_WASM as string;
   const targetChainId = process.env.CHAINID as string;
 
+  console.log(querying.data);
+
   const isPresent = querying.data.some((entry: [string[], boolean]) => {
     const [chainIdInData, addressInData] = entry[0];
     return (
