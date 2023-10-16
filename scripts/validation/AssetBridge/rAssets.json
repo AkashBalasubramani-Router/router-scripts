@@ -1,0 +1,12 @@
+{
+  "alpha": [
+    {
+      "chain_type": 1,
+      "chain_id": "43113",
+      "asset": "0x5425890298aed601595a70AB815c96711a31Bc65",
+      "name": "RUSDC",
+      "r_asset": "0xc7ae53ec54df904a7101358028ab29062f6ddc03",
+      "alreadySet": false
+    }
+  ]
+}

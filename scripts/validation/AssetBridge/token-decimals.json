@@ -1,0 +1,9 @@
+{
+    "alpha": [
+        {
+          "chain_id": "near-testnet",
+          "decimal": 18,
+          "token_address": "rusdt.router_protocol.testnet"
+        }
+    ]
+}

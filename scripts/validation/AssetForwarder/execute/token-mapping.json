@@ -1,0 +1,10 @@
+{
+  "testnet": [
+    {
+      "src_chain_id": "43113",
+      "src_token": "0xA4ff1239e6c67386A63DCe3abDBA4D348A87b025",
+      "src_token_decimals": 18,
+      "symbol": "FJ"
+    }
+  ]
+}

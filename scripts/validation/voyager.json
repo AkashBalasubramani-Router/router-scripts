@@ -1,0 +1,30 @@
+{
+  "alpha": {
+    "AssetBridge": {
+      "addr": "router1yclf6qdph5v78zyf6vp36gwstdz3lutw6pn3yyfjz5ujejczj74qnjj7gg",
+      "code_id": "36"
+    },
+    "FeeManager": {
+      "addr": "router1tq4s6ycgk5vy5gn2vhw0eajdzcn8t96kalva2efhthdry7n2c44qtdw5cn",
+      "code_id": "38"
+    },
+    "myaddress": {
+      "addr": "router1tuzxjdyzelqjrleyfjeuxue67uf0nhcz6gdx4g",
+      "code_id": "39"
+    }
+  },
+  "testnet": {
+    "AssetForwarder": {
+      "addr": "router17hlelrccxutnpe6u0gw2tk52f6ekrwenmz9amyhhfsq2v24mhkzquuwu99",
+      "code_id": "37"
+    },
+    "myaddress": {
+      "addr": "router1tuzxjdyzelqjrleyfjeuxue67uf0nhcz6gdx4g",
+      "code_id": "39"
+    },
+    "AssetForwarder1": {
+      "addr": "router1ux7cdgg5y22rtnx2mqyjrh879murvtahenlpj7vh85q85pv3aelsxpcumu",
+      "code_id": "37"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "alpha": [
+    {
+      "chain_id": "near-testnet",
+      "burnable": true,
+      "token_addr": "rusdt.router_protocol.testnet"
+    }
+  ]
+}

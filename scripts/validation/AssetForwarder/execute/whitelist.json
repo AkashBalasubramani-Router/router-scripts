@@ -1,0 +1,9 @@
+{
+  "testnet": [
+    {
+      "chain_id": "43113",
+      "contract": "0xA4ff1239e6c67386A63DCe3abDBA4D348A87b025",
+      "is_default": true
+    }
+  ]
+}
