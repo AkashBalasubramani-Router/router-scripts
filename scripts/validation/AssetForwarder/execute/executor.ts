@@ -1,6 +1,6 @@
 import fs from "fs";
 import dotenv from "dotenv";
-import sendMessage from "../../../send_message";
+import sendMessage from "../../send_message";
 dotenv.config();
 
 if (!process.env.ENV) {
@@ -299,7 +299,8 @@ export const whitelist_contracts = async function (
   try {
     type InsideData = {
       chain_id: string;
-      address: string;
+      contract: string;
+      is_default: boolean;
     };
 
     type Data = {
@@ -315,7 +316,8 @@ export const whitelist_contracts = async function (
     for (let i = 0; i < white_list_address[env].length; i++) {
       const individualData: InsideData = {
         chain_id: white_list_address[env][i].chain_id,
-        address: white_list_address[env][i].address,
+        contract: white_list_address[env][i].contract,
+        is_default: white_list_address[env][i].is_default,
       };
       data["contracts"].push(individualData);
     }

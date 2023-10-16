@@ -1,0 +1,12 @@
+{
+  "alpha": [
+    {
+      "chain_id": "80001",
+      "chain_type": 1
+    },
+    {
+      "chain_id": "43113",
+      "chain_type": 1
+    }
+  ]
+}

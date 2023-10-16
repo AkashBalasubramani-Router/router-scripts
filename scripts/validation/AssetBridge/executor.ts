@@ -1,6 +1,6 @@
 import fs from "fs";
 import dotenv from "dotenv";
-import sendMessage from "../../send_message";
+import sendMessage from "../send_message";
 import { set } from "@project-serum/anchor/dist/cjs/utils/features";
 dotenv.config();
 
@@ -492,23 +492,39 @@ export const set_chain_bytes_infos = async function (
   }
 };
 
+const chaintype = JSON.parse(fs.readFileSync("chaintype.json", "utf-8"));
 export const set_chain_type = async function (
   env: string,
-  contract_address: string,
-  chain_id: string,
-  chain_type: string
+  contract_address: string
 ) {
   try {
-    const data = {
-      chain_id: chain_id,
-      chain_type: chain_type,
+    type InsideData = {
+      chain_id: string;
+      chain_type: number;
     };
-    await sendMessage({
-      env,
-      action: "set_chain_type",
-      contractAddr: contract_address,
-      data,
-    });
+
+    type Data = {
+      chain_type_info: InsideData[];
+    };
+
+    const data: Data = {
+      chain_type_info: [],
+    };
+
+    for (let i = 0; i < chaintype[env].length; i++) {
+      if (chaintype[env][i].alreadySet) {
+        continue;
+      }
+
+      data["chain_type_info"].push(chaintype[env][i]);
+
+      await sendMessage({
+        env,
+        action: "set_chain_types",
+        contractAddr: contract_address,
+        data,
+      });
+    }
   } catch (error) {
     console.error("Error setting expiry time period:", error);
   }
@@ -517,7 +533,5 @@ export const set_chain_type = async function (
 //////////////
 set_chain_type(
   env,
-  "router1yclf6qdph5v78zyf6vp36gwstdz3lutw6pn3yyfjz5ujejczj74qnjj7gg",
-  "43113",
-  "1"
+  "router1yclf6qdph5v78zyf6vp36gwstdz3lutw6pn3yyfjz5ujejczj74qnjj7gg"
 );
