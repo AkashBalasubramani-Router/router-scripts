@@ -1,0 +1,16 @@
+{
+  "testnet": [
+    {
+      "config_id": "0",
+      "src_chain_id": "43113",
+      "dest_chain_id": "80001",
+
+      "src_token": "0x5ef08bf39c9f23b24e3f9afdba783d96e8b43cad",
+      "dest_token": "0x0a76c4c7ac06cd877dfc35422e1fcd68f5e3702f",
+      "lp_validator_and_protocol_fee_in_bps": "1000",
+      "base_fee_in_usd": "1000",
+      "swap_fee_in_usd": "1000",
+      "max_fee_in_usd": "1"
+    }
+  ]
+}

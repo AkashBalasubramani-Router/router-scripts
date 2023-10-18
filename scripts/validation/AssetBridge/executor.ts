@@ -1,6 +1,6 @@
 import fs from "fs";
 import dotenv from "dotenv";
-import sendMessage from "../send_message";
+import sendMessage from "../../send_message";
 import { set } from "@project-serum/anchor/dist/cjs/utils/features";
 dotenv.config();
 

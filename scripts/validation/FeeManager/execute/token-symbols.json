@@ -1,5 +1,5 @@
 {
-  "alpha": [
+  "testnet": [
     {
       "token": "rusdt.router_protocol.testnet",
       "chain_id": "near-testnet",

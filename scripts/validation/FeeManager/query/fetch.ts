@@ -39,14 +39,16 @@ export async function DetectChainGrpcWasmApi(
   }
 }
 
-export const fetch_all_chain_bytes_config = async function (
+///////////////////////
+
+export const get_contract_version = async function (
   env: string,
   contract_address: string
 ) {
   let client = await DetectChainGrpcWasmApi(env);
   let function1 = toUtf8(
     JSON.stringify({
-      fetch_all_chain_bytes_config: {},
+      get_contract_version: {},
     })
   );
 
@@ -55,246 +57,8 @@ export const fetch_all_chain_bytes_config = async function (
     function1
   );
 
-  console.log(querying.data);
+  console.log(querying.data.version);
 };
-
-export const fetch_all_default_white_listed = async function (
-  env: string,
-  contract_address: string
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-  let function1 = toUtf8(
-    JSON.stringify({
-      fetch_all_default_white_listed: {},
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data);
-};
-
-export const fetch_all_white_listed = async function (
-  env: string,
-  contract_address: string
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-  let function1 = toUtf8(
-    JSON.stringify({
-      fetch_all_white_listed: {},
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data);
-};
-
-export const fetch_balance = async function (
-  env: string,
-  contract_address: string
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-
-  let function1 = toUtf8(
-    JSON.stringify({
-      fetch_balance: {},
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data);
-};
-
-export const fetch_blocked_fund = async function (
-  env: string,
-  contract_address: string,
-  chain_id: string,
-  depositor: string,
-  token: string
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-  let function1 = toUtf8(
-    JSON.stringify({
-      fetch_blocked_fund: {
-        chain_id: chain_id,
-        depositor: depositor,
-        token: token,
-      },
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data);
-};
-
-export const fetch_chain_bytes_info = async function (
-  env: string,
-  contract_address: string,
-  bytes: number[]
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-
-  let function1 = toUtf8(
-    JSON.stringify({
-      fetch_chain_bytes_info: {
-        bytes: bytes,
-      },
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data);
-};
-
-export const fetch_chain_bytes = async function (
-  env: string,
-  contract_address: string,
-  chain_id: string
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-
-  let function1 = toUtf8(
-    JSON.stringify({
-      fetch_chain_bytes: {
-        chain_id: chain_id,
-      },
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data);
-};
-
-export const fetch_chain_type = async function (
-  env: string,
-  contract_address: string,
-  chain_id: string
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-  let function1 = toUtf8(
-    JSON.stringify({
-      fetch_chain_type: {
-        chain_id: chain_id,
-      },
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data);
-};
-
-export const fetch_dest_token = async function (
-  env: string,
-  contract_address: string,
-  src_chain_id: string,
-  dest_chain_id: string,
-  src_token: string
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-  let function1 = toUtf8(
-    JSON.stringify({
-      fetch_dest_token: {
-        src_chain_id: src_chain_id,
-        dest_chain_id: dest_chain_id,
-        src_token: src_token,
-      },
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data);
-};
-
-export const fetch_dest_tokens_config = async function (
-  env: string,
-  contract_address: string
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-  let function1 = toUtf8(
-    JSON.stringify({
-      fetch_dest_tokens_config: {},
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data);
-};
-
-///
-export const fetch_expiry_time_period = async function (
-  env: string,
-  contract_address: string
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-  let function1 = toUtf8(
-    JSON.stringify({
-      fetch_expiry_time_period: {},
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data);
-};
-
-export const fetch_gas_factor = async function (
-  env: string,
-  contract_address: string
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-  let function1 = toUtf8(
-    JSON.stringify({
-      fetch_gas_factor: {},
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data);
-};
-
-//
 
 export const fetch_owner = async function (
   env: string,
@@ -315,37 +79,56 @@ export const fetch_owner = async function (
   console.log(querying.data);
 };
 
-export const fetch_static_fee = async function (
-  env: string,
-  contract_address: string
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-  let function1 = toUtf8(
-    JSON.stringify({
-      fetch_static_fee: {},
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data);
-};
-
-export const fetch_token_info = async function (
+export async function get_fee_config_i_d(
   env: string,
   contract_address: string,
-  chain_id: string,
-  token: string
+  src_chain_id: string,
+  src_chain_type: number,
+  dest_chain_id: string,
+  dest_chain_type: number,
+  src_token: string,
+  dest_token: string
+) {
+  let client = await DetectChainGrpcWasmApi(env);
+
+  const request = {
+    address: contract_address,
+    queryData: toUtf8(
+      JSON.stringify({
+        get_fee_config_i_d: {
+          src_chain_id,
+          src_chain_type,
+          dest_chain_id,
+          dest_chain_type,
+          src_token,
+          dest_token,
+        },
+      })
+    ),
+  };
+
+  const feeConfigId = await client.fetchSmartContractState(
+    request.address,
+    request.queryData
+  );
+
+  return feeConfigId.data;
+}
+
+export const fetch_available_fee = async function (
+  env: string,
+  contract_address: string,
+  src_chain_id: string,
+  src_token: string,
+  dest_token: string
 ) {
   let client = await DetectChainGrpcWasmApi(env);
   let function1 = toUtf8(
     JSON.stringify({
-      fetch_token_info: {
-        chain_id: chain_id,
-        token: token,
+      fetch_available_fee: {
+        src_chain_id: src_chain_id,
+        src_token: src_token,
+        dest_token: dest_token,
       },
     })
   );
@@ -358,7 +141,195 @@ export const fetch_token_info = async function (
   console.log(querying.data);
 };
 
-export const fetch_whitelisted = async function (
+export async function get_fee_struct(
+  env: string,
+  contract_address: string,
+  fee_config_id: string
+) {
+  let client = await DetectChainGrpcWasmApi(env);
+  let function1 = toUtf8(
+    JSON.stringify({
+      get_fee_struct: {
+        fee_config_id: fee_config_id,
+      },
+    })
+  );
+
+  const querying = await client.fetchSmartContractState(
+    contract_address,
+    function1
+  );
+
+  console.log(querying.data);
+}
+
+export async function get_lp_fee_in_bps(
+  env: string,
+  contract_address: string,
+  fee_config_id: string
+) {
+  let client = await DetectChainGrpcWasmApi(env);
+  let function1 = toUtf8(
+    JSON.stringify({
+      get_lp_fee_in_bps: {
+        fee_config_id: fee_config_id,
+      },
+    })
+  );
+
+  const querying = await client.fetchSmartContractState(
+    contract_address,
+    function1
+  );
+
+  console.log(querying.data);
+}
+
+export async function get_validator_fee_in_bps(
+  env: string,
+  contract_address: string,
+  fee_config_id: string
+) {
+  let client = await DetectChainGrpcWasmApi(env);
+  let function1 = toUtf8(
+    JSON.stringify({
+      get_validator_fee_in_bps: {
+        fee_config_id: fee_config_id,
+      },
+    })
+  );
+
+  const querying = await client.fetchSmartContractState(
+    contract_address,
+    function1
+  );
+
+  console.log(querying.data);
+}
+
+export async function get_protocol_fee_in_bps(
+  env: string,
+  contract_address: string,
+  fee_config_id: string
+) {
+  let client = await DetectChainGrpcWasmApi(env);
+  let function1 = toUtf8(
+    JSON.stringify({
+      get_protocol_fee_in_bps: {
+        fee_config_id: fee_config_id,
+      },
+    })
+  );
+
+  const querying = await client.fetchSmartContractState(
+    contract_address,
+    function1
+  );
+
+  console.log(querying.data);
+}
+
+export async function get_widget_fee_in_bps(
+  env: string,
+  contract_address: string,
+  widget_id: string
+) {
+  let client = await DetectChainGrpcWasmApi(env);
+  let function1 = toUtf8(
+    JSON.stringify({
+      get_widget_fee_in_bps: {
+        widget_id: widget_id,
+      },
+    })
+  );
+
+  const querying = await client.fetchSmartContractState(
+    contract_address,
+    function1
+  );
+
+  console.log(querying.data);
+}
+
+export async function get_base_fee_in_bps(
+  env: string,
+  contract_address: string,
+  fee_config_id: string
+) {
+  let client = await DetectChainGrpcWasmApi(env);
+  let function1 = toUtf8(
+    JSON.stringify({
+      get_base_fee_in_bps: {
+        fee_config_id: fee_config_id,
+      },
+    })
+  );
+
+  const querying = await client.fetchSmartContractState(
+    contract_address,
+    function1
+  );
+
+  console.log(querying.data);
+}
+
+export async function get_swap_fee_in_bps(
+  env: string,
+  contract_address: string,
+  fee_config_id: string
+) {
+  let client = await DetectChainGrpcWasmApi(env);
+  let function1 = toUtf8(
+    JSON.stringify({
+      get_swap_fee_in_bps: {
+        fee_config_id: fee_config_id,
+      },
+    })
+  );
+
+  const querying = await client.fetchSmartContractState(
+    contract_address,
+    function1
+  );
+
+  console.log(querying.data);
+}
+
+export const get_fee = async function (
+  env: string,
+  contract_address: string,
+  src_chain_id: string,
+  dest_chain_id: string,
+  src_token: string,
+  widget_id: string,
+  transaction_volume: string,
+  gas_limit: number,
+  gas_price: number
+) {
+  let client = await DetectChainGrpcWasmApi(env);
+  let function1 = toUtf8(
+    JSON.stringify({
+      get_fee: {
+        src_chain_id: src_chain_id,
+        dest_chain_id: dest_chain_id,
+        src_token: src_token,
+        widget_id: widget_id,
+        transaction_volume: transaction_volume,
+        gas_limit: gas_limit,
+        gas_price: gas_price,
+      },
+    })
+  );
+
+  const querying = await client.fetchSmartContractState(
+    contract_address,
+    function1
+  );
+
+  console.log(querying.data);
+};
+
+export async function get_fee_factor(
   env: string,
   contract_address: string,
   chain_id: string
@@ -366,7 +337,7 @@ export const fetch_whitelisted = async function (
   let client = await DetectChainGrpcWasmApi(env);
   let function1 = toUtf8(
     JSON.stringify({
-      fetch_whitelisted: {
+      get_fee_factor: {
         chain_id: chain_id,
       },
     })
@@ -378,59 +349,64 @@ export const fetch_whitelisted = async function (
   );
 
   console.log(querying.data);
-};
+}
+
+export async function get_default_gas_limit(
+  env: string,
+  contract_address: string,
+  chain_id: string
+) {
+  let client = await DetectChainGrpcWasmApi(env);
+  let function1 = toUtf8(
+    JSON.stringify({
+      get_default_gas_limit: {
+        chain_id: chain_id,
+      },
+    })
+  );
+
+  const querying = await client.fetchSmartContractState(
+    contract_address,
+    function1
+  );
+
+  console.log(querying.data);
+}
+
+export async function get_default_gas_price(
+  env: string,
+  contract_address: string,
+  chain_id: string
+) {
+  let client = await DetectChainGrpcWasmApi(env);
+  let function1 = toUtf8(
+    JSON.stringify({
+      get_default_gas_price: {
+        chain_id: chain_id,
+      },
+    })
+  );
+
+  const querying = await client.fetchSmartContractState(
+    contract_address,
+    function1
+  );
+
+  console.log(querying.data);
+}
 
 /////
-export const fetch_validation_fee = async function (
-  env: string,
-  contract_address: string
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-  let function1 = toUtf8(
-    JSON.stringify({
-      fetch_validation_fee: {},
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data);
-};
-
-///
-export const get_contract_version = async function (
-  env: string,
-  contract_address: string
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-  let function1 = toUtf8(
-    JSON.stringify({
-      get_contract_version: {},
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data.version);
-};
-
-///
-
-export const is_paused = async function (
+export async function fetch_token_symbol(
   env: string,
   contract_address: string,
+  token: string,
   chain_id: string
 ) {
   let client = await DetectChainGrpcWasmApi(env);
   let function1 = toUtf8(
     JSON.stringify({
-      is_paused: {
+      fetch_token_symbol: {
+        token: token,
         chain_id: chain_id,
       },
     })
@@ -442,61 +418,64 @@ export const is_paused = async function (
   );
 
   console.log(querying.data);
-};
-
-///
-export const paused_info = async function (
-  env: string,
-  contract_address: string
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-  let function1 = toUtf8(
-    JSON.stringify({
-      paused_info: {},
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data);
-};
-
-///
-export const fetch_tokens_config = async function (
-  env: string,
-  contract_address: string
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-  let function1 = toUtf8(
-    JSON.stringify({
-      fetch_tokens_config: {},
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data);
-};
-
-///
-
-export const fetch_token_liquidity = async function (
+}
+/////
+export async function fetch_symbol_price(
   env: string,
   contract_address: string,
-  chain_id: string,
-  token: string
+  symbol: string
 ) {
   let client = await DetectChainGrpcWasmApi(env);
-
   let function1 = toUtf8(
     JSON.stringify({
-      fetch_token_liquidity: {
+      fetch_symbol_price: {
+        symbol: symbol,
+      },
+    })
+  );
+
+  const querying = await client.fetchSmartContractState(
+    contract_address,
+    function1
+  );
+
+  console.log(querying.data);
+}
+////////
+export async function fetch_token_price(
+  env: string,
+  contract_address: string,
+  token: string,
+  chain_id: string
+) {
+  let client = await DetectChainGrpcWasmApi(env);
+  let function1 = toUtf8(
+    JSON.stringify({
+      fetch_token_price: {
+        token: token,
+        chain_id: chain_id,
+      },
+    })
+  );
+
+  const querying = await client.fetchSmartContractState(
+    contract_address,
+    function1
+  );
+
+  console.log(querying.data);
+}
+
+export async function fetch_token_decimal(
+  env: string,
+  contract_address: string,
+  token: string,
+  chain_id: string
+) {
+  let client = await DetectChainGrpcWasmApi(env);
+  let function1 = toUtf8(
+    JSON.stringify({
+      fetch_token_decimal: {
         chain_id: chain_id,
         token: token,
       },
@@ -509,39 +488,22 @@ export const fetch_token_liquidity = async function (
   );
 
   console.log(querying.data);
-};
+}
 
-//
-export const fetch_partners_bps_config = async function (
-  env: string,
-  contract_address: string
-) {
-  let client = await DetectChainGrpcWasmApi(env);
-  let function1 = toUtf8(
-    JSON.stringify({
-      fetch_partners_bps_config: {},
-    })
-  );
-
-  const querying = await client.fetchSmartContractState(
-    contract_address,
-    function1
-  );
-
-  console.log(querying.data);
-};
-
-//
-export const fetch_last_info_received_timestamp = async function (
+export async function fetch_token_on_different_chain(
   env: string,
   contract_address: string,
-  chain_id: string
+  token: string,
+  src_chain_id: string,
+  dest_chain_id: string
 ) {
   let client = await DetectChainGrpcWasmApi(env);
   let function1 = toUtf8(
     JSON.stringify({
-      fetch_last_info_received_timestamp: {
-        chain_id: chain_id,
+      fetch_token_on_different_chain: {
+        token: token,
+        src_chain_id: src_chain_id,
+        dest_chain_id: dest_chain_id,
       },
     })
   );
@@ -552,8 +514,75 @@ export const fetch_last_info_received_timestamp = async function (
   );
 
   console.log(querying.data);
-};
+} //string not found
 
+export async function get_generic_fee(
+  env: string,
+  contract_address: string,
+  chain_id: string,
+  chain_type: string,
+  gas_limit: number,
+  gas_price: number,
+  src_token_decimal: number
+) {
+  let client = await DetectChainGrpcWasmApi(env);
+  let function1 = toUtf8(
+    JSON.stringify({
+      get_generic_fee: {
+        chain_id: chain_id,
+        chain_type: chain_type,
+        gas_limit: gas_limit,
+        gas_price: gas_price,
+        src_token_decimal: src_token_decimal,
+      },
+    })
+  );
+
+  const querying = await client.fetchSmartContractState(
+    contract_address,
+    function1
+  );
+
+  console.log(querying.data);
+} //@unknown variant
+
+export async function fetch_fee_var(
+  env: string,
+  contract_address: string,
+  dest_chain_id: string,
+  dest_chain_type: string,
+  dest_token: string,
+  src_chain_id: string,
+  src_chain_type: string,
+  src_stable_token: string,
+  src_token: string,
+  token_decimal: string,
+  widget_id: string
+) {
+  let client = await DetectChainGrpcWasmApi(env);
+  let function1 = toUtf8(
+    JSON.stringify({
+      fetch_fee_var: {
+        dest_chain_id: dest_chain_id,
+        dest_chain_type: dest_chain_type,
+        dest_token: dest_token,
+        src_chain_id: src_chain_id,
+        src_chain_type: src_chain_type,
+        src_stable_token: src_stable_token,
+        src_token: src_token,
+        token_decimal: token_decimal,
+        widget_id: widget_id,
+      },
+    })
+  );
+
+  const querying = await client.fetchSmartContractState(
+    contract_address,
+    function1
+  );
+
+  console.log(querying.data);
+} //unknown variant @error
 /////////////////////
 
 if (!process.env.ENV) {
@@ -561,8 +590,12 @@ if (!process.env.ENV) {
 }
 const env = process.env.ENV;
 
-fetch_last_info_received_timestamp(
+fetch_token_on_different_chain(
   env,
-  "router17hlelrccxutnpe6u0gw2tk52f6ekrwenmz9amyhhfsq2v24mhkzquuwu99",
-  "43113"
+  "router194aq8vvnpvfn6v343hgndq53tpu728arw3ar0n5s3x9497d5g3asm9awzk",
+  "0x001",
+  "43113",
+  "80001"
 );
+
+//get_bps_fee @left

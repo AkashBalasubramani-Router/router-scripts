@@ -1,0 +1,14 @@
+{
+  "testnet": [
+    {
+      "widget_id": "1",
+      "widget_fee_in_bps_x1000": "1000",
+      "alreadySet": false
+    },
+    {
+      "widget_id": "2",
+      "widget_fee_in_bps_x1000": "1000",
+      "alreadySet": false
+    }
+  ]
+}

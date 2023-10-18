@@ -1,0 +1,19 @@
+{
+  "testnet": [
+    {
+      "chain_id": "80001",
+      "chain_type": 1,
+      "new_fee_factor": "10"
+    },
+    {
+      "chain_id": "43113",
+      "chain_type": 1,
+      "new_fee_factor": "10"
+    },
+    {
+      "chain_id": "near-testnet",
+      "chain_type": 5,
+      "new_fee_factor": "10"
+    }
+  ]
+}

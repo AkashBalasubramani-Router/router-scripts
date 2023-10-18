@@ -1,0 +1,14 @@
+{
+  "testnet": [
+    {
+      "symbol": "USDC",
+      "price_in_usdx10e9": "1000000000",
+      "alreadySet": false
+    },
+    {
+      "symbol": "RUSDC",
+      "price_in_usdx10e9": "1000000000",
+      "alreadySet": false
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "testnet": [
+    {
+      "fee_config_id": "1",
+      "fee_in_bps_x1000": "100"
+    },
+    {
+      "fee_config_id": "2",
+      "fee_in_bps_x1000": "200"
+    }
+  ]
+}
