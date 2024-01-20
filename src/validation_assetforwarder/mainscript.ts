@@ -24,6 +24,7 @@ async function fetchAndFilterData(
     const data = response.data;
 
     if (data && data.contractConfig) {
+      console.log(data.contractConfig)
       const matchingContracts = data.contractConfig.filter((contract: any) => {
         return (
           contract.contractAddress === targetContractAddress &&

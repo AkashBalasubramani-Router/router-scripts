@@ -3,17 +3,19 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 const url =
-  "https://lcd.testnet.routerchain.dev/router-protocol/router-chain/multichain/contract_config";
+  "https://devnet-alpha.lcd.routerprotocol.com/router-protocol/router-chain/multichain/contract_config";
 
 async function fetchAndFilterData(
   targetContractAddress: string,
   targetChainId: string
 ) {
   try {
+    console.log(targetContractAddress, targetChainId);
     const response = await axios.get(url);
     const data = response.data;
 
     if (data && data.contractConfig) {
+      console.log(data.contractConfig)
       const matchingContracts = data.contractConfig.filter((contract: any) => {
         return (
           contract.contractAddress === targetContractAddress &&

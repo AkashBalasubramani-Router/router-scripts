@@ -1,3 +1,3 @@
 #!/bin/bash
 
-npx ts-node scripts/mainscript.ts
+npx ts-node src/mainscript.ts
